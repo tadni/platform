@@ -18,6 +18,7 @@
         };
       in {
         coq-lens = pkgs.coqPackages_8_20.coq-lens;
+        rocq-mcp = pkgs.rocq-mcp;
       }
     );
   };
