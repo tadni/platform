@@ -1,27 +1,6 @@
 { lib, python3Packages, fetchFromGitHub }:
 
-let
-  pytanque = python3Packages.buildPythonPackage {
-    pname = "pytanque";
-    version = "0.2.2";
-    pyproject = true;
-
-    src = fetchFromGitHub {
-      owner = "LLM4Rocq";
-      repo = "pytanque";
-      rev = "v0.2.2";
-      hash = "sha256-1Hae21BuMdE6MjRdiBO7fcsuS4HzahOdLLhynAUox3I=";
-    };
-
-    build-system = [ python3Packages.setuptools ];
-
-    dependencies = with python3Packages; [
-      typing-extensions
-      requests
-    ];
-  };
-
-in python3Packages.buildPythonPackage {
+python3Packages.buildPythonPackage {
   pname = "rocq-mcp";
   version = "0.2.1";
   pyproject = true;
